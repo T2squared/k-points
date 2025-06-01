@@ -39,7 +39,7 @@ export default function Navigation({ user }: NavigationProps) {
               <div className="flex-shrink-0">
                 <Link href="/" className="flex items-center space-x-2">
                   <Coins className="h-8 w-8 text-primary" />
-                  <h1 className="text-xl font-bold text-primary">K-Point</h1>
+                  <h1 className="text-xl font-bold text-primary">K-point</h1>
                 </Link>
               </div>
               
@@ -125,7 +125,7 @@ export default function Navigation({ user }: NavigationProps) {
             <div className="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
               <div className="flex items-center flex-shrink-0 px-4 mb-5">
                 <Coins className="h-8 w-8 text-primary mr-2" />
-                <h1 className="text-xl font-bold text-primary">K-Point</h1>
+                <h1 className="text-xl font-bold text-primary">K-point</h1>
               </div>
               <nav className="px-2 space-y-1">
                 {navigationItems.map((item) => (

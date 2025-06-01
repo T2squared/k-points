@@ -219,7 +219,7 @@ export default function Admin() {
             <h2 className="text-2xl font-bold text-gray-900">管理画面</h2>
             <Badge variant="secondary">Admin</Badge>
           </div>
-          <p className="text-gray-600">K-Pointシステムの管理とデータ出力</p>
+          <p className="text-gray-600">K-pointシステムの管理とデータ出力</p>
         </div>
 
         {/* System Stats */}

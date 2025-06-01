@@ -68,7 +68,7 @@ export default function Dashboard() {
         {/* Dashboard Header */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">ダッシュボード</h2>
-          <p className="text-gray-600">チームメンバーに感謝の気持ちをK-Pointで表現しましょう</p>
+          <p className="text-gray-600">チームメンバーに感謝の気持ちをK-pointで表現しましょう</p>
         </div>
 
         {/* Stats Cards */}

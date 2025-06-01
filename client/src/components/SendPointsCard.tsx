@@ -69,7 +69,7 @@ export default function SendPointsCard({ user }: SendPointsCardProps) {
       setSelectedPoints(3);
       
       toast({
-        title: "K-Pointを送付しました",
+        title: "K-pointを送付しました",
         description: `${selectedPoints}ポイントを正常に送付しました。`,
       });
     },
@@ -88,7 +88,7 @@ export default function SendPointsCard({ user }: SendPointsCardProps) {
       
       toast({
         title: "送付に失敗しました",
-        description: error.message || "K-Pointの送付に失敗しました。",
+        description: error.message || "K-pointの送付に失敗しました。",
         variant: "destructive",
       });
     },
@@ -113,7 +113,7 @@ export default function SendPointsCard({ user }: SendPointsCardProps) {
       <CardHeader>
         <CardTitle className="flex items-center space-x-2">
           <Send className="h-5 w-5 text-primary" />
-          <span>K-Pointを送付する</span>
+          <span>K-pointを送付する</span>
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -200,7 +200,7 @@ export default function SendPointsCard({ user }: SendPointsCardProps) {
               {sendPointsMutation.isPending 
                 ? "送付中..." 
                 : canSend 
-                  ? "K-Pointを送付する"
+                  ? "K-pointを送付する"
                   : dailySentCount >= 3
                     ? "今日の送付上限に達しました"
                     : "ポイントが不足しています"

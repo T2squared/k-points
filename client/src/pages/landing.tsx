@@ -15,10 +15,10 @@ export default function Landing() {
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-6">
             <Coins className="h-12 w-12 text-primary mr-3" />
-            <h1 className="text-4xl font-bold text-gray-900">K-Point</h1>
+            <h1 className="text-4xl font-bold text-gray-900">K-point</h1>
           </div>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            社内で感謝の気持ちを形にする。チームメンバー同士でK-Pointを贈り合い、
+            社内で感謝の気持ちを形にする。チームメンバー同士でK-pointを贈り合い、
             日々の貢献を可視化します。
           </p>
           
