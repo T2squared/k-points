@@ -128,9 +128,27 @@ export async function setupAuth(app: Express) {
 }
 
 export const isAuthenticated: RequestHandler = async (req, res, next) => {
+  // For development demo mode, check for demo user headers
+  const demoUserId = req.headers['x-demo-user-id'] as string;
+  if (demoUserId) {
+    const demoUser = await storage.getUser(demoUserId);
+    if (demoUser) {
+      (req as any).user = {
+        claims: {
+          sub: demoUser.id,
+          email: demoUser.email,
+          first_name: demoUser.firstName,
+          last_name: demoUser.lastName,
+          profile_image_url: demoUser.profileImageUrl
+        }
+      };
+      return next();
+    }
+  }
+
   const user = req.user as any;
 
-  if (!req.isAuthenticated() || !user.expires_at) {
+  if (!req.isAuthenticated() || !user?.expires_at) {
     return res.status(401).json({ message: "Unauthorized" });
   }
 

@@ -1,8 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Coins, Heart, Users, TrendingUp } from "lucide-react";
+import { Coins, Heart, Users, TrendingUp, User, Shield } from "lucide-react";
 
 export default function Landing() {
+  const loginAsDemo = (userId: string) => {
+    localStorage.setItem('demo-user-id', userId);
+    window.location.reload();
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-orange-50">
       <div className="container mx-auto px-4 py-16">
@@ -16,12 +21,63 @@ export default function Landing() {
             社内で感謝の気持ちを形にする。チームメンバー同士でK-Pointを贈り合い、
             日々の貢献を可視化します。
           </p>
+          
+          {/* Demo Login Options */}
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 max-w-2xl mx-auto mb-8">
+            <h3 className="text-lg font-semibold mb-4">デモアカウントでログイン</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {/* Demo Users */}
+              <div className="space-y-3">
+                <h4 className="flex items-center text-sm font-medium text-gray-700">
+                  <User className="h-4 w-4 mr-2" />
+                  一般ユーザー
+                </h4>
+                <Button 
+                  onClick={() => loginAsDemo('demo1')}
+                  variant="outline"
+                  className="w-full justify-start"
+                >
+                  田中 太郎（営業部）
+                </Button>
+                <Button 
+                  onClick={() => loginAsDemo('demo2')}
+                  variant="outline"
+                  className="w-full justify-start"
+                >
+                  鈴木 花子（マーケティング部）
+                </Button>
+              </div>
+              
+              {/* Admin Users */}
+              <div className="space-y-3">
+                <h4 className="flex items-center text-sm font-medium text-gray-700">
+                  <Shield className="h-4 w-4 mr-2" />
+                  管理者
+                </h4>
+                <Button 
+                  onClick={() => loginAsDemo('admin1')}
+                  variant="outline"
+                  className="w-full justify-start"
+                >
+                  山田 次郎（人事部）
+                </Button>
+                <Button 
+                  onClick={() => loginAsDemo('admin2')}
+                  variant="outline"
+                  className="w-full justify-start"
+                >
+                  佐藤 美香（IT部）
+                </Button>
+              </div>
+            </div>
+          </div>
+
           <Button 
             onClick={() => window.location.href = '/api/login'}
             size="lg"
             className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg"
           >
-            ログインして始める
+            Replitアカウントでログイン
           </Button>
         </div>
 

@@ -93,7 +93,10 @@ export default function Navigation({ user }: NavigationProps) {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
-                  <DropdownMenuItem onClick={() => window.location.href = '/api/logout'}>
+                  <DropdownMenuItem onClick={() => {
+                    localStorage.removeItem('demo-user-id');
+                    window.location.href = '/api/logout';
+                  }}>
                     <LogOut className="h-4 w-4 mr-2" />
                     ログアウト
                   </DropdownMenuItem>
